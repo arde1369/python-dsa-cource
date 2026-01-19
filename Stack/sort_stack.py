@@ -39,17 +39,16 @@ class Stack:
 #                                        #
 ##########################################
 def sort_stack(stack):
-    tempStack = Stack()
     if stack.is_empty():
         return
-    
-    while stack.is_empty() is False:
+    tempStack = Stack()
+    while not stack.is_empty():
         temp = stack.pop()
-        while tempStack.is_empty() is False and temp < tempStack.peek():
+        while not tempStack.is_empty() and temp < tempStack.peek():
             stack.push(tempStack.pop())
         tempStack.push(temp)
     
-    while tempStack.is_empty() is False:
+    while not tempStack.is_empty():
         stack.push(tempStack.pop())
 
 
