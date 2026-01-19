@@ -17,6 +17,10 @@ Example 3:
 
 Input: x = 120
 Output: 21
+
+Constraints:
+
+-231 <= x <= 231 - 1
 """
 
 def reverse(x):
@@ -40,8 +44,12 @@ def reverse(x):
         #Flip the string -> 's[::-1]' 
         #Strip any leading zeros -> .lstrip("0")
         s = (s[::-1]).lstrip("0")
-    #Cast to int and return
-    return int(s)
+    
+    #Check if reveresed integer meets constraints -231 <= x <= 231 - 1
+    if -2**31 <= int(s) <= 2**31 - 1:
+        return int(s)
+    return 0
+
 
 x = 120
 output = reverse(x)
@@ -59,4 +67,10 @@ x = -123
 output = reverse(x)
 expected = -321
 print("Test case 3:")
+print(f"Input: {x} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
+
+x = 1534236469
+output = reverse(x)
+expected = 0
+print("Test case 4:")
 print(f"Input: {x} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
