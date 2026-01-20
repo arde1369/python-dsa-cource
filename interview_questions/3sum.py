@@ -32,18 +32,33 @@ def threeSum(nums):
     :type nums: List[int]
     :rtype: List[List[int]]
     """
-    
+    nums.sort()
     res = []
-    for i in range(0, len(nums)):
-        for j in range (i+1, len(nums)):
-            for k in range(j+1,len(nums)):
-                if nums[i] + nums[j] + nums[k] == 0 and i != j and i != k and j != k:
-                    res.append([nums[i], nums[j], nums[k]])
+    for l in range(0, len(nums)-2): #iterates through list and sets left pointer. len(nums)-2 makes sure we always have a mid and right pointers
+        #Makes sure we dont have duplicates so it skips any duplicates that are next to each other.Skips until last occurence.
+        if l > 0 and nums[l] == nums[l-1]:
+            continue
+        m = l+1 #mid pointer
+        r = len(nums)-1 #right pointer
+        while m < r: 
+            s = nums[l]+nums[m]+nums[r]
+            if s < 0: 
+                m+=1
+            elif s > 0:
+                r-=1
+            else:
+                res.append([nums[l],nums[m],nums[r]])
+                while m < r and nums[m] == nums[m+1]: #skips all duplicates from middle
+                    m+=1
+                while m < r and nums[r] == nums[r-1]: #skips all duplicates from right
+                    r-=1
+                m+=1
+                r-=1
     return res
 
 x = [-1,0,1,2,-1,-4]
 output = threeSum(x)
-expected = [[-1,0,1],[-1,2,-1],[0,1,-1]]
+expected = [[-1,-1,2],[-1,0,1]]
 print("Test case 1:")
 print(f"Input: {x} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
 
