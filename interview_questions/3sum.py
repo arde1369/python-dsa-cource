@@ -37,7 +37,7 @@ def threeSum(nums):
     for i in range(0, len(nums)):
         for j in range (i+1, len(nums)):
             for k in range(j+1,len(nums)):
-                if nums[i] + nums[j] + nums[k] == 0:
+                if nums[i] + nums[j] + nums[k] == 0 and i != j and i != k and j != k:
                     res.append([nums[i], nums[j], nums[k]])
     return res
 
