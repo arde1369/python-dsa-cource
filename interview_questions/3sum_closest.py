@@ -28,7 +28,7 @@ def threeSumClosest(nums, target):
     nums.sort()
     closestSumToTarget = 0
     currentLowestDist = float('inf')
-    for left in range(len(nums)-2):
+    for left in range(len(nums)-2): #Iterate over the sorted list and set left pointer. We iterate up to len(nums) - 2 to ensure we always have a middle and right pointer.
         mid = left+1
         right = len(nums)-1
         while mid < right:

@@ -7,18 +7,18 @@ class Solution(object):
         wp = 1
         count = 0
     
-        for i in range(1, len(nums)):
-            if nums[i] != nums[i-1]:
+        for rp in range(1, len(nums)):
+            if nums[rp] != nums[rp-1]:
                 count = 0
             else:
                 count += 1
 
             if count < 2:
-                nums[wp] = nums[i]
+                nums[wp] = nums[rp]
                 wp += 1
 
         return wp
-    
+
 solution =Solution()
 nums = [1,1,1,2,2,3]
 print("test case 1:")

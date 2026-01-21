@@ -30,7 +30,7 @@ def longestPalindrome(s):
     :rtype: str
     """
     res = ""
-    for idx in range(len(s)):
+    for idx in range(len(s)-1):
         even = isPalindrome(s, idx,idx+1)
         odd = isPalindrome(s, idx, idx)
         if len(res) < len(even):

@@ -39,9 +39,14 @@ def productExceptSelf(nums):
     
     return answer
 
+x = [1,2,3,4]
+expected = [24,12,8,6]
+output = productExceptSelf(x)
 print("Test case 1:")
-print(productExceptSelf([1,2,3,4]))
+print(f"Input: {x} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
 
+x = [-1,1,0,-3,3]
+expected = [0,0,9,0,0]
+output = productExceptSelf(x)
 print("Test case 2:")
-print(productExceptSelf([-1,1,0,-3,3]))
-    
+print(f"Input: {x} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
