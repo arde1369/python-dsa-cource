@@ -34,13 +34,13 @@ Explanation: The maximum profit can be achieved by buying the stock on day 2 (pr
 ##################################
 #only buy/sell once.
 def max_profit(prices):
-    min_price = float('inf')
-    max_profit = 0
-    for price in prices:
+    min_price = prices[0]
+    max_prof = 0
+    for price in prices[1:]:
         min_price = min(price, min_price)
         profit = price - min_price
-        max_profit = max(profit,max_profit)
-    return max_profit
+        max_prof = max(max_prof,profit)
+    return max_prof
     
 #continue buy/sell from all prices
 def max_profit_2(prices):
@@ -49,35 +49,34 @@ def max_profit_2(prices):
     :rtype: int
     """
     min_price = float('inf')
-    max = 0
+    max_prof = 0
     for price in prices:
         if min_price < price:
-            max+= price - min_price
+            max_prof += price - min_price
         min_price = price
-    return max
-
+    return max_prof
 
 prices = [7, 1, 5, 3, 6, 4]
-profit = max_profit(prices)
+output = max_profit(prices)
+expected=5
 print("Test with mixed prices:")
-print("Prices:", prices)
-print("Maximum profit:", profit)
+print(f"Input: {input} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
 print("-----------------------------")
 
 
 prices = [7, 6, 4, 3, 1]
-profit = max_profit(prices)
+output = max_profit(prices)
+expected=0
 print("Test with descending prices:")
-print("Prices:", prices)
-print("Maximum profit:", profit)
+print(f"Input: {input} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
 print("-----------------------------")
 
 
 prices = [1, 2, 3, 4, 5, 6]
-profit = max_profit(prices)
+output = max_profit(prices)
+expected=5
 print("Test with ascending prices:")
-print("Prices:", prices)
-print("Maximum profit:", profit)
+print(f"Input: {input} | Expected: {expected} | Actual: {output} | Results: ", "Pass" if output == expected else "Fail" )
 print("-----------------------------")
 
 

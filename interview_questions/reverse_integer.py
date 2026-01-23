@@ -20,10 +20,10 @@ Output: 21
 
 Constraints:
 
--231 <= x <= 231 - 1
+-2^31 <= x <= 2^31 - 1
 """
 
-def reverse(x):
+def reverse2(x):
     """
     :type x: int
     :rtype: int

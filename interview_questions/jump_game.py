@@ -24,19 +24,14 @@ Constraints:
 """
 
 def canJump(nums):
-    """
-    :type nums: List[int]
-    :rtype: bool
-    """
     gas = 0
     for num in nums:
         if gas < 0:
             return False
-        elif num > gas:
+        if gas < num:
             gas = num
         gas-=1
     return True
-
 
 nums = [2,3,1,1,4]
 print("Test case 1")

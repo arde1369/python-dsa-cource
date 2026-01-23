@@ -43,7 +43,6 @@ def remove_duplicates(nums):
             wp+=1
     return wp
 
-
 # Test case 1: Empty list
 test1 = []
 print(f"Test 1 Before: {test1}")

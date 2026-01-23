@@ -40,8 +40,7 @@ class LinkedList:
             if fast == slow:
                 return True
         return False
-    
-    
+
 my_linked_list_1 = LinkedList(1)
 my_linked_list_1.append(2)
 my_linked_list_1.append(3)

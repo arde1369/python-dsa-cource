@@ -23,9 +23,9 @@ def dfs(left,right,ans,s):
         dfs(left,right-1,ans,s+")")
 
 def generateParenthesis(n):
-    left,right,ans = n, n, []
+    ans = []
     if n > 0:
-        dfs(left,right,ans,"")
+        dfs(n,n,ans,"")
     return ans
 
 print("Test Case 1:")

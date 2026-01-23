@@ -25,7 +25,7 @@ class LinkedList:
   
  
   
-def find_kth_from_end(ll, k):       
+def find_kth_from_end2(ll, k):       
     #### WRITE FIND_KTH_FROM_END FUNCTION HERE ####
     #                                             #
     #    This is a SEPARATE FUNCTION that         #
@@ -50,7 +50,6 @@ def find_kth_from_end(ll, k):
         fast = fast.next
         slow = slow.next
     return slow
-
 
 
 my_linked_list = LinkedList(1)

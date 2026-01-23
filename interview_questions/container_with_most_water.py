@@ -29,10 +29,11 @@ def maxArea(height):
     :rtype: int
     """
     i = 0
-    j = len(height) - 1
+    j = len(height)-1
     res = 0
-    while i < j:
-        res = max(res, (j - i) * (min(height[i],height[j])))
+    while i<j:
+        a = (j - i) * min(height[i],height[j])
+        res = max(res,a)
         if height[i] < height[j]:
             i+=1
         else:
