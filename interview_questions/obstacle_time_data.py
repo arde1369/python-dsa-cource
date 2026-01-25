@@ -121,7 +121,7 @@ class RunCollection(object):
     def best_of_bests(self):
         bestTime = 0
         column = 0
-        while column < 4:
+        while column < self.course.obstacle_count:
             a = []
             for run in self.runs:
                 if column < len(run.obstacle_times):
