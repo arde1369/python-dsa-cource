@@ -17,28 +17,26 @@ We treat every character in the string as a potential center of a palindrome. We
 
 Since palindromes can have an odd length (e.g., in "aba", the center is "b") or an even length (e.g., in "abba", the center is the gap between "bb"), 
 we must check both cases. For an odd length, l=r=i. For an even length, l=i and r=i+1.
-"""
-def isPalindrome(s,left,right):
-    while left >= 0 and right < len(s) and s[left] == s[right]:
+""" 
+
+def isPalindrome(left,right,s):
+    while left >= 0 and right < len(s)-1 and s[left] == s[right]:
         left-=1
-        right+=1
+        right +=1
     return s[left+1:right]
 
 def longestPalindrome(s):
-    """
-    :type s: str
-    :rtype: str
-    """
-    res = ""
+    if len(s) == 0:
+        return 0
+    longest = ""
     for idx in range(len(s)-1):
-        even = isPalindrome(s, idx,idx+1)
-        odd = isPalindrome(s, idx, idx)
-        if len(res) < len(even):
-            res = even
-        if len(res) < len(odd):
-            res = odd
-    return res
-    
+        even = isPalindrome(idx,idx+1,s)
+        odd = isPalindrome(idx,idx,s)
+        if len(longest) < len(even):
+            longest = even
+        if len(longest) < len(odd):
+            longest = odd
+    return longest
 
 s = "cbbd"
 expected = "bb"

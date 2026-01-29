@@ -27,7 +27,7 @@ Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 """
 
-def threeSum2(nums):
+def threeSum(nums):
     """
     :type nums: List[int]
     :rtype: List[List[int]]

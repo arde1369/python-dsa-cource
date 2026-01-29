@@ -126,8 +126,7 @@ class RunCollection(object):
             for run in self.runs:
                 if column < len(run.obstacle_times):
                     a.append(run.obstacle_times[column])
-            a.sort()
-            bestTime+=a[0]
+            bestTime+=min(a)
             column+=1
             
         return bestTime
@@ -186,6 +185,7 @@ class TestSuite(unittest.TestCase):
         run_collection = self.make_run_collection(test_course, obstacle_data)
         self.assertEqual(run_collection.get_num_runs(), len(obstacle_data))
         self.assertEqual(run_collection.personal_best(), 17)
+    
     def test_best_of_bests(self):
         obstacle_data = [
                             [3, 4, 5, 6],

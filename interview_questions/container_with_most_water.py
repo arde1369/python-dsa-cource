@@ -23,22 +23,20 @@ Input: height = [1,1]
 Output: 1
 """
 
-def maxArea(height):
-    """
-    :type height: List[int]
-    :rtype: int
-    """
+def maxArea(heights):
+    if not heights:
+        return None
+    max_area = 0
     i = 0
-    j = len(height)-1
-    res = 0
-    while i<j:
-        a = (j - i) * min(height[i],height[j])
-        res = max(res,a)
-        if height[i] < height[j]:
+    j = len(heights)-1
+    while i < j:
+        curr_area = (j - i) * min(heights[i], heights[j])
+        max_area = max(max_area, curr_area)
+        if heights[i] < heights[j]:
             i+=1
         else:
             j-=1
-    return res
+    return max_area
 
 x = [1,8,6,2,5,4,8,3,7]
 output = maxArea(x)

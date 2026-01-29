@@ -24,6 +24,8 @@ Constraints:
 """
 
 def canJump(nums):
+    if not nums:
+        return False
     gas = 0
     for num in nums:
         if gas < 0:
