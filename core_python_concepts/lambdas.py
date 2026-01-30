@@ -1,5 +1,5 @@
 """
-LAmbda function:
+Lambda function:
     - A small anonymous function for a one time use. They take any number of arguments but have only 1 expression
     - Helps keep namespace clean and is useful with higher order functions like sort(), map(), filter(), reduce()
     - syntax: lambda paramter(s): expression

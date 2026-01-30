@@ -11,7 +11,7 @@ class C:
 
     @typing.final
     def greeting(self):
-        print("Hello!")
+        print(f"Hello {self.name}!")
 
 
 class C1(C):
@@ -38,3 +38,4 @@ my_class = C1("class 1")
 my_class.class_method()
 
 my_class.print_name()
+my_class.greeting()
